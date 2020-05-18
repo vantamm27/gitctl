@@ -10,9 +10,9 @@ import (
 )
 
 type Environment struct {
-	Id         int64
-	Name       string `orm:"size(128)"`
-	Createdate string `orm:"size(128)"`
+	Id         int64  `orm:"column(id);auto" json:"id"`
+	Name       string `orm:"column(name);string;size(128)" json:"name"`
+	Createdate string `orm:"column(createdate);size(128)"`
 }
 
 func init() {

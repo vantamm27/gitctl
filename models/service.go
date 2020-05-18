@@ -10,9 +10,9 @@ import (
 )
 
 type Service struct {
-	Id         int64  `orm:"unique,AUTOINCREMENT"`
-	Name       string `orm:"unique,size(128)"`
-	Createdate string `orm:"size(128)"`
+	Id         int64  `orm:"column(id);auto" json:"id"`
+	Name       string `orm:"column(name);string;size(128)" json:"name"`
+	Createdate string `orm:"column(createdate);string;size(128)"`
 }
 
 func init() {

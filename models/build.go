@@ -10,12 +10,12 @@ import (
 )
 
 type Build struct {
-	Id          int64
-	ServiceId   int64
-	ServiceName string `orm:"size(128)"`
-	EnvId       int64
-	EnvName     int64
-	Createdate  string `orm:"size(128)"`
+	Id          int64  `orm:"column(id);auto" json:"id"`
+	ServiceId   int64  `orm:"column(srv_id);default(0)" json:"srv_id"`
+	ServiceName string `orm:"column(srv_name);string;size(128)" json:"srv_name"`
+	EnvId       int64  `orm:"column(env_id);default(0)" json:"env_id"`
+	EnvName     string `orm:"column(env_name);string;size(128)" json:"env_name"`
+	Createdate  string `orm:"column(createdate);string;size(128)"`
 }
 
 func init() {
